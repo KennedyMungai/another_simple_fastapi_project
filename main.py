@@ -26,3 +26,16 @@ async def root() -> dict:
         dict: A message for when the code is successfully executed
     """
     return {"Message": "Hello World"}
+
+
+@app.get('/blog/type/{type}')
+async def get_blog(type: BlogType) -> dict:
+    """The endpoint to retrieve a blog of a certain type
+
+    Args:
+        type (BlogType): The class 
+
+    Returns:
+        dict: A message to show successful execution
+    """
+    return {"Message": f"Blog type {type}"}
