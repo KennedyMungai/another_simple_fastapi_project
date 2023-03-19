@@ -1,5 +1,6 @@
 """The entrypoint for the app"""
 from fastapi import FastAPI
+from enum import Enum
 
 app = FastAPI()
 
