@@ -59,7 +59,9 @@ async def get_blog_comment(
     Returns:
         dict: A message to show successful execution of the code
     """
-    return {"message": f"blog id: {_id}, comment id: {_comment_id}, validity: {_is_valid}, username: {_username}"}
+    return {
+        "message": f"blog id: {_id}, comment id: {_comment_id}, validity: {_is_valid}, username: {_username}"
+    }
 
 
 @app.get('/blog/type/{_type}')
