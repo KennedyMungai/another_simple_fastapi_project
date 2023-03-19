@@ -64,7 +64,7 @@ async def get_blog_comment(
     }
 
 
-@app.get('/blog/type/{_type}')
+@app.get('/blog/type/{_type}', status_code=status.HTTP_200_OK)
 async def get_blog(_type: BlogType) -> dict:
     """The endpoint to retrieve a blog of a certain type
 
