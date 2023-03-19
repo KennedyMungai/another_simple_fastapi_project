@@ -39,7 +39,7 @@ async def get_all_blogs(page: int, page_size: int) -> dict:
     Returns:
         dict: A message to show successful execution of the code
     """
-    return {'message', f'All {page_size} blogs on page {page}'}
+    return {'message': f'All {page_size} blogs on page {page}'}
 
 
 @app.get('/blog/type/{_type}')
