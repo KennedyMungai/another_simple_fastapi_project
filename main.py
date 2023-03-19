@@ -43,6 +43,11 @@ async def get_all_blogs(page: int = 1, page_size: Optional[int] = None) -> dict:
     return {'message': f'All {page_size} blogs on page {page}'}
 
 
+@app.get("/blog/{id}/comments/{comment_id}")
+async def get_blog_comment(_id: int, _comment_id: int):
+    return {"message": f"The blog of id {_id} has a comment of id {_comment_id}"}
+
+
 @app.get('/blog/type/{_type}')
 async def get_blog(_type: BlogType) -> dict:
     """The endpoint to retrieve a blog of a certain type
