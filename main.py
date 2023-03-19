@@ -28,6 +28,20 @@ async def root() -> dict:
     return {"Message": "Hello World"}
 
 
+@app.get("/blog/all")
+async def get_all_blogs(page, page_size) -> dict:
+    """An endpoint to get all blogs
+
+    Args:
+        page (_type_): _description_
+        page_size (_type_): _description_
+
+    Returns:
+        dict: A message to show successful execution of the code
+    """
+    return {'message', f'All {page_size} blogs on page {page}'}
+
+
 @app.get('/blog/type/{_type}')
 async def get_blog(_type: BlogType) -> dict:
     """The endpoint to retrieve a blog of a certain type
