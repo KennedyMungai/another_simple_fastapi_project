@@ -43,7 +43,7 @@ async def get_all_blogs(page: int = 1, page_size: Optional[int] = None) -> dict:
     return {'message': f'All {page_size} blogs on page {page}'}
 
 
-@app.get("/blog/{id}/comments/{comment_id}")
+@app.get("/blog/{_id}/comments/{_comment_id}")
 async def get_blog_comment(
     _id: int,
     _comment_id: int,
@@ -59,7 +59,7 @@ async def get_blog_comment(
     Returns:
         dict: A message to show successful execution of the code
     """
-    return {"message": f"The blog of id {_id} has a comment of id {_comment_id}"}
+    return {"message": f"blog id: {_id}, comment id: {_comment_id}, validity: {_is_valid}, username: {_username}"}
 
 
 @app.get('/blog/type/{_type}')
