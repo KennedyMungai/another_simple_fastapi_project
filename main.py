@@ -28,8 +28,8 @@ async def root() -> dict:
     return {"Message": "Hello World"}
 
 
-@app.get('/blog/type/{type}')
-async def get_blog(type: BlogType) -> dict:
+@app.get('/blog/type/{_type}')
+async def get_blog(_type: BlogType) -> dict:
     """The endpoint to retrieve a blog of a certain type
 
     Args:
@@ -38,4 +38,4 @@ async def get_blog(type: BlogType) -> dict:
     Returns:
         dict: A message to show successful execution
     """
-    return {"Message": f"Blog type {type}"}
+    return {"Message": f"Blog type {_type}"}
