@@ -13,9 +13,9 @@ class BlogType(str, Enum):
         str (_type_): A simple string argument
         Enum (_type_): An enum
     """
-    short: 'short'
-    story: 'story'
-    howto: 'howto'
+    short = 'short'
+    story = 'story'
+    howto = 'howto'
 
 
 @app.get("/")
