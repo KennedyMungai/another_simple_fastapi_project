@@ -30,7 +30,7 @@ async def root() -> dict:
 
 
 @app.get("/blog/all")
-async def get_all_blogs(page: int = 1, page_size: Optional[int] = 10) -> dict:
+async def get_all_blogs(page: int = 1, page_size: Optional[int] = None) -> dict:
     """An endpoint to get all blogs
 
     Args:
