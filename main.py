@@ -1,8 +1,7 @@
 """The entrypoint for the app"""
 from enum import Enum
-from typing import Optional
 
-from fastapi import FastAPI, status
+from fastapi import FastAPI
 
 app = FastAPI()
 
