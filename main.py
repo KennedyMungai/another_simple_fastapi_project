@@ -17,3 +17,4 @@ async def root() -> dict:
 
 
 app.include_router(blog_get.router)
+app.include_router(blog_post.router)
