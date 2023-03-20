@@ -7,6 +7,11 @@ from pydantic import BaseModel
 router = APIRouter(prefix='/blog', tags=['blog'])
 
 
+class Image(BaseModel):
+    url: str
+    alias: str
+
+
 class BlogModel(BaseModel):
     """The template for the blog data
 
