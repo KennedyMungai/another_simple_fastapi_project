@@ -1,7 +1,7 @@
 """A python script that contains the blog post endpoints"""
-from typing import Optional
+from typing import List, Optional
 
-from fastapi import APIRouter, Body
+from fastapi import APIRouter, Body, Query
 from pydantic import BaseModel
 
 router = APIRouter(prefix='/blog', tags=['blog'])
@@ -37,16 +37,18 @@ async def create_post(blog: BlogModel, _id: int, _version: int = 1) -> dict:
 
 @router.post('/new/{_id}/comments')
 async def create_comment(
-        blog: BlogModel,
-        _id: int,
-        # _comment_id: Query(
-        #     None,
-        #     title="Id of the comment",
-        #     description="Some description for the comment_id"),
-        _content: str = Body(
-            ...,
-            min_length=10, max_length=80,
-            regex='^[a-z\s]*$')) -> dict:
+    blog: BlogModel,
+    _id: int,
+    # _comment_id: Query(
+    #     None,
+    #     title="Id of the comment",
+    #     description="Some description for the comment_id"),
+    _content: str = Body(
+        ...,
+        min_length=10, max_length=80,
+        regex='^[a-z\s]*$'),
+    v: Optional[List[str]] = Query(None)
+) -> dict:
     """An endpoint to create comments
 
     Args:
