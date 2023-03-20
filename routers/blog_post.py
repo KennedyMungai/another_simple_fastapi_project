@@ -63,5 +63,6 @@ async def create_comment(
         "blog": blog,
         "id": _id,
         # "comment_id": _comment_id,
-        "content": _content
+        "content": _content,
+        "version": _v
     }
