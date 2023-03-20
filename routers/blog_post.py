@@ -1,13 +1,16 @@
 """A python script that contains the blog post endpoints"""
 from fastapi import APIRouter
 from pydantic import BaseModel
+from typing import Optional
 
 
 router = APIRouter(prefix='/blog', tags=['blog'])
 
 
 class BlogModel(BaseModel):
-    pass
+    title: str
+    content: str
+    published: Optional[bool]
 
 
 @router.post('/new')
