@@ -28,6 +28,7 @@ class BlogModel(BaseModel):
     published: Optional[bool]
     tags: List[str] = []
     metadata: Dict = {"Key": "Value"}
+    image: Optional[Image] = None
 
 
 @router.post('/new/{_id}')
