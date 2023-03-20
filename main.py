@@ -29,7 +29,12 @@ async def root() -> dict:
     return {"Message": "Hello World"}
 
 
-@app.get("/blog/all", tags=['blog'])
+@app.get(
+    "/blog/all",
+    tags=['blog'],
+    summary="Retrieves all blogs",
+    description="An API endpoint to retrieve all blosg"
+)
 async def get_all_blogs(page: int = 1, page_size: Optional[int] = None) -> dict:
     """An endpoint to get all blogs
 
