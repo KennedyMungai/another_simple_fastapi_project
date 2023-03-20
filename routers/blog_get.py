@@ -1,9 +1,8 @@
 """Blog get operations API router file"""
+from enum import Enum
 from typing import Optional
 
 from fastapi import APIRouter, status
-
-from enum import Enum
 
 router = APIRouter(prefix='/blog', tags=["blog"])
 
