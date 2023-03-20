@@ -35,7 +35,7 @@ async def create_post(blog: BlogModel, _id: int, _version: int = 1) -> dict:
     }
 
 
-@router.post('/new/{_id}/comments')
+@router.post('/new/{_id}/comments/{_comment_id}')
 async def create_comment(
     blog: BlogModel,
     _id: int,
