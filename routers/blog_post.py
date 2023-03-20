@@ -8,6 +8,11 @@ router = APIRouter(prefix='/blog', tags=['blog'])
 
 
 class Image(BaseModel):
+    """The Image class
+
+    Args:
+        BaseModel (Class): The parent class
+    """
     url: str
     alias: str
 
