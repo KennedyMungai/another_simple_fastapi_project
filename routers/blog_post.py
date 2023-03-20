@@ -28,4 +28,8 @@ async def create_post(blog: BlogModel, _id: int, _version: int = 1) -> dict:
     Returns:
         dict: A dict containing the blog data
     """
-    return {"data": blog}
+    return {
+        "id": _id,
+        "data": blog,
+        "version": _version
+    }
