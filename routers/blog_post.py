@@ -1,5 +1,5 @@
 """A python script that contains the blog post endpoints"""
-from typing import List, Optional
+from typing import Dict, List, Optional
 
 from fastapi import APIRouter, Body, Query, Path
 from pydantic import BaseModel
@@ -17,6 +17,7 @@ class BlogModel(BaseModel):
     content: str
     published: Optional[bool]
     tags: List[str] = []
+    metadata: Dict
 
 
 @router.post('/new/{_id}')
