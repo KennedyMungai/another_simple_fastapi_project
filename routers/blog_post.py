@@ -16,7 +16,7 @@ class BlogModel(BaseModel):
     title: str
     content: str
     published: Optional[bool]
-    tags: List[str]
+    tags: List[str] = []
 
 
 @router.post('/new/{_id}')
