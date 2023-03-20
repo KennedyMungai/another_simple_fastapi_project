@@ -2,7 +2,7 @@
 from enum import Enum
 from typing import Optional
 
-from fastapi import FastAPI, HTTPException, Response, status
+from fastapi import FastAPI, status
 
 app = FastAPI()
 
