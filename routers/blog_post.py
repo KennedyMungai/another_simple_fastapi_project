@@ -18,8 +18,8 @@ class BlogModel(BaseModel):
     published: Optional[bool]
 
 
-@router.post('/new')
-async def create_post(blog: BlogModel) -> dict:
+@router.post('/new/{_id}')
+async def create_post(blog: BlogModel, _id: int, _version: int = 1) -> dict:
     """The create post endpoint
 
     Args:
