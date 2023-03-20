@@ -10,7 +10,6 @@ router = APIRouter(prefix='/blog', tags=["blog"])
 
 @router.get(
     "/all",
-    tags=['blog'],
     summary="Retrieves all blogs",
     description="An API endpoint to retrieve all blogs"
 )
@@ -48,7 +47,7 @@ async def get_blog_comment(
     }
 
 
-@router.get('/type/{_type}', status_code=status.HTTP_200_OK, tags=['blog'])
+@router.get('/type/{_type}', status_code=status.HTTP_200_OK)
 async def get_blog(_type: BlogType) -> dict:
     """The endpoint to retrieve a blog of a certain type
 
