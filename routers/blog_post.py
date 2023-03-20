@@ -43,7 +43,7 @@ async def create_comment(
         #     None,
         #     title="Id of the comment",
         #     description="Some description for the comment_id"),
-        _content: str = Body(Ellipsis)) -> dict:
+        _content: str = Body(...)) -> dict:
     """An endpoint to create comments
 
     Args:
