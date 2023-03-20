@@ -39,10 +39,12 @@ async def create_post(blog: BlogModel, _id: int, _version: int = 1) -> dict:
 async def create_comment(
     blog: BlogModel,
     _id: int,
-    # _comment_id: Query(
-    #     None,
-    #     title="Id of the comment",
-    #     description="Some description for the comment_id"),
+    __comment_title: Query(
+        None,
+        title="Id of the comment",
+        description="Some description for the comment_title",
+        alias='Comment Title'
+    ),
     _content: str = Body(
         ...,
         min_length=10, max_length=80,
