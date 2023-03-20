@@ -40,4 +40,8 @@ async def create_comment(
         blog: BlogModel,
         _id: int,
         _comment_id: Query(None, title="Id of the comment", description="Some description for the comment_id")) -> dict:
-    pass
+    return {
+        "blog": blog,
+        "id": _id,
+        "comment_id": _comment_id
+    }
