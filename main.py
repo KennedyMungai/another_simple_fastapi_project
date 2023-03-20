@@ -29,7 +29,7 @@ async def root() -> dict:
     return {"Message": "Hello World"}
 
 
-@app.get("/blog/all")
+@app.get("/blog/all", tags=['blog'])
 async def get_all_blogs(page: int = 1, page_size: Optional[int] = None) -> dict:
     """An endpoint to get all blogs
 
@@ -43,7 +43,7 @@ async def get_all_blogs(page: int = 1, page_size: Optional[int] = None) -> dict:
     return {'message': f'All {page_size} blogs on page {page}'}
 
 
-@app.get("/blog/{_id}/comments/{_comment_id}")
+@app.get("/blog/{_id}/comments/{_comment_id}", tags=['blog', 'comment'])
 async def get_blog_comment(
     _id: int,
     _comment_id: int,
