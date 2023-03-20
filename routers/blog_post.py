@@ -40,6 +40,16 @@ async def create_comment(
         blog: BlogModel,
         _id: int,
         _comment_id: Query(None, title="Id of the comment", description="Some description for the comment_id")) -> dict:
+    """An endpoint to create comments
+
+    Args:
+        blog (BlogModel): The template for the blog data
+        _id (int): The id of the blog
+        _comment_id (Query, optional): The comment of the if. Defaults to "Id of the comment", description="Some description for the comment_id").
+
+    Returns:
+        dict: _description_
+    """
     return {
         "blog": blog,
         "id": _id,
