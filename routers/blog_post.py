@@ -20,4 +20,12 @@ class BlogModel(BaseModel):
 
 @router.post('/new')
 async def create_post(blog: BlogModel) -> dict:
+    """The create post endpoint
+
+    Args:
+        blog (BlogModel): The blog object
+
+    Returns:
+        dict: A dict containing the blog data
+    """
     return {"data": blog}
