@@ -5,8 +5,6 @@ from routers import blog_get
 
 app = FastAPI()
 
-app.include_router(blog_get.router)
-
 
 @app.get("/")
 async def root() -> dict:
@@ -16,3 +14,6 @@ async def root() -> dict:
         dict: A message for when the code is successfully executed
     """
     return {"Message": "Hello World"}
+
+
+app.include_router(blog_get.router)
