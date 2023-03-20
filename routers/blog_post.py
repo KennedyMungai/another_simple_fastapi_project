@@ -17,7 +17,7 @@ class BlogModel(BaseModel):
     content: str
     published: Optional[bool]
     tags: List[str] = []
-    metadata: Dict
+    metadata: Dict = {"Key": "Value"}
 
 
 @router.post('/new/{_id}')
