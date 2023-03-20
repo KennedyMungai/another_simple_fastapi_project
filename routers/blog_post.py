@@ -11,5 +11,5 @@ class BlogModel(BaseModel):
 
 
 @router.post('/new')
-async def create_post():
-    pass
+async def create_post(blog: BlogModel) -> str:
+    return 'ok'
