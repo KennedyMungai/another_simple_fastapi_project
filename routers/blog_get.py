@@ -3,9 +3,21 @@ from typing import Optional
 
 from fastapi import APIRouter, status
 
-from main import BlogType
+from enum import Enum
 
 router = APIRouter(prefix='/blog', tags=["blog"])
+
+
+class BlogType(str, Enum):
+    """The template for the blog data
+
+    Args:
+        str (_type_): A simple string argument
+        Enum (_type_): An enum
+    """
+    SHORT = 'short'
+    STORY = 'story'
+    HOWTO = 'howto'
 
 
 @router.get(

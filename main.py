@@ -1,21 +1,11 @@
 """The entrypoint for the app"""
-from enum import Enum
-
 from fastapi import FastAPI
+
+from routers import blog_get
 
 app = FastAPI()
 
-
-class BlogType(str, Enum):
-    """The template for the blog data
-
-    Args:
-        str (_type_): A simple string argument
-        Enum (_type_): An enum
-    """
-    SHORT = 'short'
-    STORY = 'story'
-    HOWTO = 'howto'
+app.include_router(blog_get.router)
 
 
 @app.get("/")
