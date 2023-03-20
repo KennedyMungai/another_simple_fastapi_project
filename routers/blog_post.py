@@ -40,18 +40,18 @@ async def create_post(blog: BlogModel, _id: int, _version: int = 1) -> dict:
 async def create_comment(
     blog: BlogModel,
     _id: int,
-    __comment_title: Query(
-        None,
-        title="Id of the comment",
-        description="Some description for the comment_title",
-        alias='Comment Title'
-    ),
+    # __comment_title: Query(
+    #     None,
+    #     title="Id of the comment",
+    #     description="Some description for the comment_title",
+    #     alias='Comment Title'
+    # ),
     _content: str = Body(
         ...,
         min_length=10, max_length=80,
         regex='^[a-z\s]*$'),
     _v: Optional[List[str]] = Query(None),
-        _comments_id: int = Path(None, gt=5, le=10)) -> dict:
+        _comments_id: int = Path(gt=5, le=10)) -> dict:
     """An endpoint to create comments
 
     Args:
@@ -65,7 +65,7 @@ async def create_comment(
     return {
         "blog": blog,
         "id": _id,
-        "comment title": __comment_title,
+        # "comment title": __comment_title,
         "content": _content,
         "version": _v
     }
