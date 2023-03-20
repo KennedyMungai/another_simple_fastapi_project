@@ -36,5 +36,8 @@ async def create_post(blog: BlogModel, _id: int, _version: int = 1) -> dict:
 
 
 @router.post('/new/{_id}/comments')
-async def create_comment(blog: BlogModel, _id: int, _comment_id: Query(None)) -> dict:
+async def create_comment(
+        blog: BlogModel,
+        _id: int,
+        _comment_id: Query(None, title="Id of the comment", description="Some description for the comment_id")) -> dict:
     pass
