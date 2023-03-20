@@ -5,6 +5,6 @@ from fastapi import APIRouter
 router = APIRouter(prefix='/blog', tags=['blog'])
 
 
-@router.post('/')
+@router.post('/new')
 async def create_post():
     pass
