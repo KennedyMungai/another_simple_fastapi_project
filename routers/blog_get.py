@@ -1,3 +1,4 @@
+"""Blog get operations API router file"""
 from fastapi import APIRouter
 
 
