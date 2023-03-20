@@ -47,7 +47,7 @@ async def create_comment(
         ...,
         min_length=10, max_length=80,
         regex='^[a-z\s]*$'),
-    v: Optional[List[str]] = Query(None)
+    _v: Optional[List[str]] = Query(None)
 ) -> dict:
     """An endpoint to create comments
 
