@@ -33,7 +33,7 @@ async def root() -> dict:
     "/blog/all",
     tags=['blog'],
     summary="Retrieves all blogs",
-    description="An API endpoint to retrieve all blosg"
+    description="An API endpoint to retrieve all blogs"
 )
 async def get_all_blogs(page: int = 1, page_size: Optional[int] = None) -> dict:
     """An endpoint to get all blogs
