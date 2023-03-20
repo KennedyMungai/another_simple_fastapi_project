@@ -1,7 +1,7 @@
 """A python script that contains the blog post endpoints"""
 from typing import Optional
 
-from fastapi import APIRouter, Body, Query
+from fastapi import APIRouter, Body
 from pydantic import BaseModel
 
 router = APIRouter(prefix='/blog', tags=['blog'])
