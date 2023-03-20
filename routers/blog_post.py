@@ -39,10 +39,10 @@ async def create_post(blog: BlogModel, _id: int, _version: int = 1) -> dict:
 async def create_comment(
         blog: BlogModel,
         _id: int,
-        _comment_id: Query(
-            None,
-            title="Id of the comment",
-            description="Some description for the comment_id"),
+        # _comment_id: Query(
+        #     None,
+        #     title="Id of the comment",
+        #     description="Some description for the comment_id"),
         _content: str = Body('hi how are you')) -> dict:
     """An endpoint to create comments
 
@@ -57,6 +57,6 @@ async def create_comment(
     return {
         "blog": blog,
         "id": _id,
-        "comment_id": _comment_id,
+        # "comment_id": _comment_id,
         "content": _content
     }
