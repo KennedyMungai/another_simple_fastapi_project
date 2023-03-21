@@ -69,7 +69,9 @@ async def create_comment(
     Args:
         blog (BlogModel): The template for the blog data
         _id (int): The id of the blog
-        _comment_id (Query, optional): The comment of the if. Defaults to "Id of the comment", description="Some description for the comment_id").
+        _comment_id (Query, optional): 
+                The comment of the if. 
+                Defaults to "Id of the comment", description="Some description for the comment_id").
 
     Returns:
         dict: _description_
