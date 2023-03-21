@@ -21,8 +21,8 @@ def get_db():
     Yields:
         db: A database session
     """
-    db = SessionLocal()
+    _db = SessionLocal()
     try:
-        yield db
+        yield _db
     finally:
-        db.close()
+        _db.close()
