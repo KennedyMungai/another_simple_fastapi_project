@@ -84,4 +84,9 @@ async def create_comment(
 
 
 def required_functionality() -> dict:
+    """A dummy function
+
+    Returns:
+        dict: Returns a messages to show successful execution of the logic
+    """
     return {"First": "This comment is the bomb"}
