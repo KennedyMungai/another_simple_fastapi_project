@@ -11,3 +11,5 @@ def create_user(_db: Session, request: UserBase):
         email=request.email,
         password=Hash(request.password)
     )
+
+    _db.add(new_user)
