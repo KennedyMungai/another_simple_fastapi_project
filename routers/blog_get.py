@@ -40,7 +40,10 @@ async def get_all_blogs(
     Returns:
         dict: A message to show successful execution of the code
     """
-    return {'message': f'All {page_size} blogs on page {page}'}
+    return {
+        'message': f'All {page_size} blogs on page {page}',
+        'req': required_parameter
+    }
 
 
 @router.get("/{_id}/comments/{_comment_id}", tags=['comment'])
