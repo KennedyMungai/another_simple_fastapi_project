@@ -9,3 +9,5 @@ SQLITE_DATABASE_URL = "sqlite:///./blog.db"
 engine = create_engine(SQLITE_DATABASE_URL, connect_args={
                        "check_same_thread": False
                        })
+
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=Engine)
