@@ -4,6 +4,8 @@ from typing import Optional
 
 from fastapi import APIRouter, status
 
+from .blog_post import required_functionality
+
 router = APIRouter(prefix='/blog', tags=["blog"])
 
 
