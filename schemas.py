@@ -14,8 +14,14 @@ class UserBase(BaseModel):
 
 
 class UserDisplay(BaseModel):
+    """The template for the data returned from the database to the front end application
+
+    Args:
+        BaseModel (Class): The parent class for the UserDisplay class
+    """
     username: str
     email: str
 
     class Config:
+        """Configuration class for the UserDisplay """
         orm_mode = True
