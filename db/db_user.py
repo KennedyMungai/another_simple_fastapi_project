@@ -4,6 +4,8 @@ from schemas import UserBase
 from db.models import DbUser
 from db.hash import Hash
 
+hash = Hash()
+
 
 def create_user(_db: Session, _request: UserBase) -> DbUser:
     """A function to create a user
@@ -18,7 +20,7 @@ def create_user(_db: Session, _request: UserBase) -> DbUser:
     new_user = DbUser(
         username=_request.username,
         email=_request.email,
-        password=Hash(_request.password)
+        password=Hash.bcrypt(hash, _request.password)
     )
 
     _db.add(new_user)
