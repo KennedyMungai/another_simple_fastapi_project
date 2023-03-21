@@ -81,3 +81,7 @@ async def create_comment(
         "content": _content,
         "version": _v
     }
+
+
+def required_functionality() -> dict:
+    return {"First": "This comment is the bomb"}
