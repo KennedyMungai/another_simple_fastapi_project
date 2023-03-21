@@ -2,7 +2,7 @@
 from enum import Enum
 from typing import Optional
 
-from fastapi import APIRouter, status
+from fastapi import APIRouter, Depends, status
 
 from .blog_post import required_functionality
 
@@ -26,7 +26,11 @@ class BlogType(str, Enum):
     summary="Retrieves all blogs",
     description="An API endpoint to retrieve all blogs"
 )
-async def get_all_blogs(page: int = 1, page_size: Optional[int] = None) -> dict:
+async def get_all_blogs(
+    page: int = 1,
+    page_size: Optional[int] = None,
+    required_parameter: dict = Depends(required_functionality)
+) -> dict:
     """An endpoint to get all blogs
 
     Args:
