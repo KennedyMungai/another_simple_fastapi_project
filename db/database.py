@@ -11,3 +11,5 @@ engine = create_engine(SQLITE_DATABASE_URL, connect_args={
                        })
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=Engine)
+
+Base = declarative_base()
