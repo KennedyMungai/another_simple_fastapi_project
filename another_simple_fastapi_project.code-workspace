@@ -5,6 +5,6 @@
     }
   ],
   "settings": {
-    "cSpell.words": ["autoflush", "howto", "sessionmaker"]
+    "cSpell.words": ["autoflush", "howto", "passlib", "sessionmaker"]
   }
 }
