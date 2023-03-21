@@ -1,9 +1,10 @@
 """The file to contain the logic for the user API endpoint"""
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm.session import Session
+
+from db import db_user
 from db.database import get_db
 from schemas import UserBase
-from db import db_user
 
 
 router = APIRouter(prefix="/user", tags=['user'])
