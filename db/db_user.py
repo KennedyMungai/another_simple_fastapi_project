@@ -5,12 +5,14 @@ from db.models import DbUser
 from db.hash import Hash
 
 
-def create_user(_db: Session, request: UserBase):
+def create_user(_db: Session, _request: UserBase) -> DbUser:
     new_user = DbUser(
-        username=request.username,
-        email=request.email,
-        password=Hash(request.password)
+        username=_request.username,
+        email=_request.email,
+        password=Hash(_request.password)
     )
 
     _db.add(new_user)
     _db.commit()
+    _db.refresh(new_user)
+    return new_user
