@@ -9,7 +9,7 @@ def create_user(_db: Session, _request: UserBase) -> DbUser:
     """A function to create a user
 
     Args:
-        _db (Session): The database sessuon
+        _db (Session): The database session
         _request (UserBase): The user data
 
     Returns:
