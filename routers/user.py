@@ -4,14 +4,14 @@ from sqlalchemy.orm.session import Session
 
 from db import db_user
 from db.database import get_db
-from schemas import UserBase
+from schemas import UserBase, UserDisplay
 
 
 router = APIRouter(prefix="/user", tags=['user'])
 
 
 # Create User
-@router.post("/")
+@router.post("/", response_model=UserDisplay)
 async def create_user(_request: UserBase, _db: Session = Depends(get_db)):
     """The create user endpoint
 
