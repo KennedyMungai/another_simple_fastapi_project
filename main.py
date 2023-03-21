@@ -3,7 +3,7 @@ from fastapi import FastAPI
 
 from db import models
 from db.database import engine
-from routers import blog_get, blog_post
+from routers import blog_get, blog_post, user
 
 app = FastAPI()
 
@@ -20,5 +20,6 @@ async def root() -> dict:
 
 app.include_router(blog_get.router)
 app.include_router(blog_post.router)
+app.include_router(user.router)
 
 models.Base.metadata.create_all(engine)
