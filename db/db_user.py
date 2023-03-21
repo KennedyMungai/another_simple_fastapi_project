@@ -13,3 +13,4 @@ def create_user(_db: Session, request: UserBase):
     )
 
     _db.add(new_user)
+    _db.commit()
