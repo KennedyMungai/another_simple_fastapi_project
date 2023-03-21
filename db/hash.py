@@ -24,7 +24,7 @@ class Hash():
 
         Args:
             hashed_password (str): The password hash
-            plain_password (str): A password argument before being ajhsged
+            plain_password (str): A password argument before being hashed
 
         Returns:
             bool: Whether the two stings match
