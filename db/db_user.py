@@ -84,3 +84,5 @@ def delete_user(_id: int, _db: Session):
     user = _db.query(DbUser).filter(DbUser.id == _id)
     _db.delete(user)
     _db.commit()
+
+    return 'ok'
