@@ -55,4 +55,14 @@ async def retrieve_one_user(_id: int, _db: Session = Depends(get_db)):
 
 @router.put("/{_id}", response_model=UserDisplay)
 async def update_user(_id: int, _request: UserBase, _db: Session = Depends(get_db)):
+    """The user update endpoint
+
+    Args:
+        _id (int): The id of the user
+        _request (UserBase): The up to date user data
+        _db (Session, optional): The database session. Defaults to Depends(get_db).
+
+    Returns:
+        _type_: _description_
+    """
     return db_user.update_user_data(_id, _request, _db)
