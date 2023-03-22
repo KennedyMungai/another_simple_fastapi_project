@@ -69,3 +69,6 @@ def update_user_data(_id: int, _request: UserBase, _db: Session):
         user.password: _request.password,
         user.email: Hash.bcrypt(_new_hash, _request.password)
     })
+
+    _db.commit()
+    return 'ok'
