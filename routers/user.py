@@ -66,3 +66,17 @@ async def update_user(_id: int, _request: UserBase, _db: Session = Depends(get_d
         _type_: _description_
     """
     return db_user.update_user_data(_id, _request, _db)
+
+
+@router.delete('/{_id}')
+async def delete_user(_id: int, _db: Session = Depends(get_db)):
+    """Wrote the functionality of delete user
+
+    Args:
+        _id (int): The id of the suer
+        _db (Session, optional): The database session. Defaults to Depends(get_db).
+
+    Returns:
+        _type_: _description_
+    """
+    return db_user.delete_user(_id, _db)
