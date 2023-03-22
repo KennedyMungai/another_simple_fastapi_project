@@ -56,3 +56,13 @@ class ArticleBase(BaseModel):
     content: str
     published: bool
     creator_id: int
+
+
+class ArticleDisplay(BaseModel):
+    title: str
+    content: str
+    published: bool
+    user: User
+
+    class Config:
+        orm_mode = True
