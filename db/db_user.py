@@ -72,3 +72,15 @@ def update_user_data(_id: int, _request: UserBase, _db: Session):
 
     _db.commit()
     return 'ok'
+
+
+def delete_user(_id: int, _db: Session):
+    """The delete user function
+
+    Args:
+        _id (int): The id of the user
+        _db (Session): The database session
+    """
+    user = _db.query(DbUser).filter(DbUser.id == _id)
+    _db.delete(user)
+    _db.commit()
