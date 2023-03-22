@@ -59,10 +59,16 @@ class ArticleBase(BaseModel):
 
 
 class ArticleDisplay(BaseModel):
+    """The class for the article display
+
+    Args:
+        BaseModel (CLass): The template fro receiving the article from the database
+    """
     title: str
     content: str
     published: bool
     user: User
 
     class Config:
+        """The Aricle Display configuration class"""
         orm_mode = True
