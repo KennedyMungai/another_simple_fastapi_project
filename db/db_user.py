@@ -39,3 +39,16 @@ def retrieve_all_users(_db: Session):
         _type_: All the data in the database
     """
     return _db.query(DbUser).all()
+
+
+def retrieve_one_user(_id: int, _db: Session):
+    """Returns a user with the supplied id
+
+    Args:
+        _id (int): The id of the user
+        _db (Session): The database
+
+    Returns:
+        _type_: The user
+    """
+    return _db.query(DbUser).filter(DbUser.id == _id).first()
