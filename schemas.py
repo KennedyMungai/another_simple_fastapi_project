@@ -45,6 +45,22 @@ class UserDisplay(BaseModel):
         orm_mode = True
 
 
+# User inside article display
+class User(BaseModel):
+    """Defined the template for User display inside the article
+
+    Args:
+        BaseModel (Class): The parent class
+    """
+    id: int
+    username: str
+
+    class Config:
+        """The configuration subclass for the User class
+        """
+        orm_mode = True
+
+
 # Schema for when an article is being created
 class ArticleBase(BaseModel):
     """The base class data template for the article
