@@ -37,3 +37,17 @@ async def retrieve_all_users(_db: Session = Depends(get_db)):
         List: A list of users in the UserDisplay template
     """
     return db_user.retrieve_all_users(_db)
+
+
+@router.get("/{_id}", response_model=UserDisplay)
+async def retrieve_one_user(_id: int, _db: Session = Depends(get_db)):
+    """Retrieves one user from the database
+
+    Args:
+        _id (int): The id of the user
+        _db (Session, optional): The database session. Defaults to Depends(get_db).
+
+    Returns:
+        user: The user of the supplied id
+    """
+    return db_user.retrieve_one_user(_id, _db)
