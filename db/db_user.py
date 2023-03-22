@@ -27,3 +27,15 @@ def create_user(_db: Session, _request: UserBase) -> DbUser:
     _db.commit()
     _db.refresh(new_user)
     return new_user
+
+
+def retrieve_all_users(_db: Session):
+    """Retrieves all the users from the database
+
+    Args:
+        _db (Session): The database session
+
+    Returns:
+        _type_: All the data in the database
+    """
+    return _db.query(DbUser).all()
