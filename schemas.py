@@ -1,5 +1,6 @@
 """File contains the logic for the schemas"""
 from pydantic import BaseModel
+from typing import List
 
 
 class UserBase(BaseModel):
@@ -21,6 +22,7 @@ class UserDisplay(BaseModel):
     """
     username: str
     email: str
+    items: List[Article] = []
 
     class Config:
         """Configuration class for the UserDisplay """
