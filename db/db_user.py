@@ -52,3 +52,20 @@ def retrieve_one_user(_id: int, _db: Session):
         _type_: The user
     """
     return _db.query(DbUser).filter(DbUser.id == _id).first()
+
+
+def update_user_data(_id: int, _request: UserBase, _db: Session):
+    """The user update function
+
+    Args:
+        _id (int): The id of the user in the database
+        _request (UserBase): The new user data
+        _db (Session): The database session
+    """
+    user = _db.query(DbUser).filter(_request.id == _id).first()
+
+    user.update({
+        user.username: _request.username,
+        user.password: _request.password,
+        user.email: Hash.bcrypt(_new_hash, _request.password)
+    })
