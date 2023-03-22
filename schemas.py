@@ -43,3 +43,16 @@ class UserDisplay(BaseModel):
     class Config:
         """Configuration class for the UserDisplay """
         orm_mode = True
+
+
+# Schema for when an article is being created
+class ArticleBase(BaseModel):
+    """The base class data template for the article
+
+    Args:
+        BaseModel (Class): The parent class
+    """
+    title: str
+    content: str
+    published: bool
+    creator_id: int
