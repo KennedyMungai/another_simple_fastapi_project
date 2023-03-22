@@ -1,5 +1,5 @@
 """A python file to define the models of the data to be put inside the database"""
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 
 from db.database import Base
 
@@ -28,3 +28,4 @@ class DbArticle(Base):
     title = Column(String)
     content = Column(String)
     published = Column(Boolean)
+    user_id = Column(Integer, ForeignKey('users.id'))
