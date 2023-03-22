@@ -62,12 +62,12 @@ def update_user_data(_id: int, _request: UserBase, _db: Session):
         _request (UserBase): The new user data
         _db (Session): The database session
     """
-    user = _db.query(DbUser).filter(_request.id == _id).first()
+    user = _db.query(DbUser).filter(DbUser.id == _id).first()
 
     user.update({
-        user.username: _request.username,
-        user.password: _request.password,
-        user.email: Hash.bcrypt(_new_hash, _request.password)
+        DbUser.username: _request.username,
+        DbUser.password: Hash.bcrypt(_new_hash, _request.password),
+        DbUser.email: _request.email
     })
 
     _db.commit()
