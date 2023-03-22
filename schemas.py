@@ -3,6 +3,22 @@ from pydantic import BaseModel
 from typing import List
 
 
+# Article inside user display
+class Article(BaseModel):
+    """The schema for the displayed article
+
+    Args:
+        BaseModel (Class): The parent class
+    """
+    title: str
+    content: str
+    published: bool
+
+    class Config:
+        """he configuration for the Article class"""
+        orm_mode = True
+
+
 class UserBase(BaseModel):
     """This class acts as the template for the user data
 
