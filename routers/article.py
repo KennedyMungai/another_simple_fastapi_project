@@ -11,4 +11,13 @@ router = APIRouter(prefix="/article", tags=['article'])
 
 @router.post("/", response_model=ArticleDisplay)
 def create_article(_request: ArticleBase, _db: Session = Depends(get_db)):
+    """The API endpoint to creating articles
+
+    Args:
+        _request (ArticleBase): The template for article creation
+        _db (Session, optional): The database session. Defaults to Depends(get_db).
+
+    Returns:
+        DbArticle: The new article
+    """
     return db_article.create_article(_db, _request)
