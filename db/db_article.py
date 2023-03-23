@@ -6,6 +6,15 @@ from schemas import ArticleBase
 
 
 def create_article(_db: Session, _request: ArticleBase):
+    """The create article function
+
+    Args:
+        _db (Session): The database session
+        _request (ArticleBase): The template for the nw article data
+
+    Returns:
+        ArticleBase: The newly created article
+    """
     new_article = DbArticle(
         title=_request.title,
         content=_request.content,
