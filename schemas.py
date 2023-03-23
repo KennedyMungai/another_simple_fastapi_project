@@ -1,6 +1,7 @@
 """File contains the logic for the schemas"""
-from pydantic import BaseModel
 from typing import List
+
+from pydantic import BaseModel
 
 
 # Article inside user display
@@ -86,5 +87,5 @@ class ArticleDisplay(BaseModel):
     user: User
 
     class Config:
-        """The Aricle Display configuration class"""
+        """The Article Display configuration class"""
         orm_mode = True
