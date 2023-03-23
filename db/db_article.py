@@ -13,6 +13,12 @@ def create_article(_db: Session, _request: ArticleBase):
         creator_id=_request.creator_id
     )
 
+    _db.add(new_article)
+    _db.commit()
+    _db.refresh(new_article)
+
+    return new_article
+
 
 def get_article(_db: Session, _id: int):
     """A function that gets articles using the id
