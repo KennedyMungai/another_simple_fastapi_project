@@ -98,6 +98,13 @@ def delete_user(_id: int, _db: Session):
         _db (Session): The database session
     """
     user = _db.query(DbUser).filter(DbUser.id == _id)
+
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"The user with id {_id} not found"
+        )
+
     _db.delete(user)
     _db.commit()
 
