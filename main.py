@@ -3,7 +3,7 @@ from fastapi import FastAPI
 
 from db import models
 from db.database import engine
-from routers import blog_get, blog_post, user, article
+from routers import article, blog_get, blog_post, user
 
 app = FastAPI()
 
