@@ -3,8 +3,8 @@ from fastapi import HTTPException, status
 from sqlalchemy.orm.session import Session
 
 from db.models import DbArticle
-from schemas import ArticleBase
 from exceptions import StoryException
+from schemas import ArticleBase
 
 
 def create_article(_db: Session, _request: ArticleBase):
