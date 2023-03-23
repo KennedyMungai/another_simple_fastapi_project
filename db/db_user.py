@@ -1,8 +1,10 @@
 """The file that contains teh ORM functionality"""
 from sqlalchemy.orm.session import Session
-from schemas import UserBase
-from db.models import DbUser
+from fastapi import HTTPException, status
+
 from db.hash import Hash
+from db.models import DbUser
+from schemas import UserBase
 
 _new_hash = Hash()
 
@@ -51,7 +53,15 @@ def retrieve_one_user(_id: int, _db: Session):
     Returns:
         _type_: The user
     """
-    return _db.query(DbUser).filter(DbUser.id == _id).first()
+    _user = _db.query(DbUser).filter(DbUser.id == _id).first()
+
+    if not _user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"A user witg the id of {_id} does not exist"
+        )
+
+    return _user
 
 
 def update_user_data(_id: int, _request: UserBase, _db: Session):
