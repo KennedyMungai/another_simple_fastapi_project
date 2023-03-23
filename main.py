@@ -21,5 +21,6 @@ async def root() -> dict:
 app.include_router(user.router)
 app.include_router(blog_get.router)
 app.include_router(blog_post.router)
+app.include_router(article.router)
 
 models.Base.metadata.create_all(engine)
