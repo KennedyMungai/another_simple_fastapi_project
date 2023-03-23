@@ -5,7 +5,12 @@ from db.models import DbArticle
 
 
 def create_article(_db: Session, _request: ArticleBase):
-    pass
+    new_article = DbArticle(
+        title=_request.title,
+        content=_request.content,
+        published=_request.published,
+        creator_id=_request.creator_id
+    )
 
 
 def get_article(_db: Session, _id: int):
