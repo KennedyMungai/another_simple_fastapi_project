@@ -18,7 +18,7 @@ def create_article(_request: ArticleBase, _db: Session = Depends(get_db)):
         _db (Session, optional): The database session. Defaults to Depends(get_db).
 
     Returns:
-        ArticleDisplat: The new article
+        ArticleDisplay: The new article
     """
     return db_article.create_article(_db, _request)
 
