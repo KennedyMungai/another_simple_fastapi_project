@@ -1,5 +1,6 @@
 """The script that handles the articles """
 from sqlalchemy.orm.session import Session
+from fastapi import HTTPException, status
 
 from db.models import DbArticle
 from schemas import ArticleBase
