@@ -41,5 +41,11 @@ def get_article(_db: Session, _id: int):
         DbArticle: A template for teh article
     """
     article = _db.query(DbArticle).filter(DbArticle.id == _id).first()
-    # TODO Handle errors
+
+    if not article:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"The article with the id of {_id} was not found"
+        )
+
     return article
