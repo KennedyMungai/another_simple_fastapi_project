@@ -2,6 +2,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm.session import Session
 
+from db import db_article
 from db.database import get_db
 from schemas import ArticleBase, ArticleDisplay
 
