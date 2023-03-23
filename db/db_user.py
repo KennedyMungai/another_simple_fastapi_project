@@ -74,6 +74,12 @@ def update_user_data(_id: int, _request: UserBase, _db: Session):
     """
     user = _db.query(DbUser).filter(DbUser.id == _id).first()
 
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"The user with id {_id} was not found"
+        )
+
     user.update({
         DbUser.username: _request.username,
         DbUser.password: Hash.bcrypt(_new_hash, _request.password),
