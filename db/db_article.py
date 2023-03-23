@@ -1,7 +1,8 @@
 """The script that handles the articles """
-from schemas import ArticleBase
 from sqlalchemy.orm.session import Session
+
 from db.models import DbArticle
+from schemas import ArticleBase
 
 
 def create_article(_db: Session, _request: ArticleBase):
