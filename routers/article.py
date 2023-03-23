@@ -25,4 +25,13 @@ def create_article(_request: ArticleBase, _db: Session = Depends(get_db)):
 
 @router.get("/{_id}", response_model=ArticleDisplay)
 def get_article(_id: int, _db: Session = Depends(get_db)):
+    """The API endpoint to retrieve specific articles
+
+    Args:
+        _id (int): The id of the article
+        _db (Session, optional): The database session. Defaults to Depends(get_db).
+
+    Returns:
+        ArticelDisplay: A template for the article data
+    """
     return db_article.get_article(_db, _id)
