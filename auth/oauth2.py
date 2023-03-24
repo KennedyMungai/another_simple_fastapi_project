@@ -17,6 +17,15 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
+    """Creates the access token
+
+    Args:
+        data (dict): The data being used to create the token
+        expires_delta (Optional[timedelta], optional): The token's expiry date. Defaults to None.
+
+    Returns:
+        str: The encoded jwt token
+    """
     to_encode = data.copy()
 
     if expires_delta:
