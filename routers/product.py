@@ -1,5 +1,6 @@
 """The product router code"""
-from fastapi import APIRouter, Response
+from typing import Optional
+from fastapi import APIRouter, Header, Response
 
 
 router = APIRouter(prefix='/product', tags=['product'])
@@ -16,3 +17,11 @@ def get_all_products():
     """
     data = " ".join(products)
     return Response(content=data, media_type="text/plain")
+
+
+@router.get('/withheader')
+def get_products(
+        _response: Response,
+        _custom_header: Optional[str] = Header
+):
+    return products
