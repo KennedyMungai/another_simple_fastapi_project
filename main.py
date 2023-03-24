@@ -1,9 +1,10 @@
 """The entrypoint for the app"""
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from db import models
 from db.database import engine
-from routers import article, blog_get, blog_post, user, product
+from routers import article, blog_get, blog_post, product, user
 
 app = FastAPI()
 
