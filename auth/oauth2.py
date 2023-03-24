@@ -1,2 +1,2 @@
 """A file containing auth code"""
-from fastapi.security import oauth2
+from fastapi.security import OAuth2PasswordBearer
