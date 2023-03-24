@@ -24,4 +24,13 @@ def get_products(
         _response: Response,
         _custom_header: Optional[str] = Header
 ):
+    """An endpoint meant to test out the header functionality
+
+    Args:
+        _response (Response): The response
+        _custom_header (Optional[str], optional): The header. Defaults to Header.
+
+    Returns:
+        List: All the products
+    """
     return products
