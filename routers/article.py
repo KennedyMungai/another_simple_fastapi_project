@@ -5,6 +5,7 @@ from sqlalchemy.orm.session import Session
 from db import db_article
 from db.database import get_db
 from schemas import ArticleBase, ArticleDisplay
+from auth.oauth2 import oauth2_schema
 
 router = APIRouter(prefix="/article", tags=['article'])
 
@@ -24,7 +25,7 @@ def create_article(_request: ArticleBase, _db: Session = Depends(get_db)):
 
 
 @router.get("/{_id}", response_model=ArticleDisplay)
-def get_article(_id: int, _db: Session = Depends(get_db)):
+def get_article(_id: int, _db: Session = Depends(get_db), token: str = Depends(oauth2_schema)):
     """The API endpoint to retrieve specific articles
 
     Args:
