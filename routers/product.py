@@ -4,4 +4,9 @@ from fastapi import APIRouter
 
 router = APIRouter(prefix='/product', tags=['product'])
 
-product = ["watch", "camera", "phone"]
+products = ["watch", "camera", "phone"]
+
+
+@router.get('all')
+def get_all_products():
+    return products
