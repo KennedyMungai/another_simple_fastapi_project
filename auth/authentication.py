@@ -14,3 +14,4 @@ def get_token(
     _request: OAuth2PasswordRequestForm = Depends(),
     _db: Session = Depends(get_db)
 ):
+    pass
