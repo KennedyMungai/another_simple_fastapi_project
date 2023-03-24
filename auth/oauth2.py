@@ -1,10 +1,11 @@
 """A file containing auth code"""
-from fastapi.security import OAuth2PasswordBearer
-from typing import Optional
-from datetime import datetime, timedelta
-from jose import jwt
 import os
-from dotenv import load_dotenv, find_dotenv
+from datetime import datetime, timedelta
+from typing import Optional
+
+from dotenv import find_dotenv, load_dotenv
+from fastapi.security import OAuth2PasswordBearer
+from jose import jwt
 
 _env = find_dotenv(load_dotenv())
 
