@@ -1,0 +1,1 @@
+"""Contains an authentication endpoint"""
